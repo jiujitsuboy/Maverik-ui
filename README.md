@@ -1,12 +1,32 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Run the application
+To run this web app
 
-Currently, two official plugins are available:
+>npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+>npm run dev
 
-## Expanding the ESLint configuration
+## 🔥 Available Options
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Method | Url |
+|:------|:---------|
+| List All Movies | `/` |
+| Add Movie | `/add` |
+| Edit Movie | `/edit/:id` |
+---
+_Delete_ operation is inside `List All Movies` so it has not a rounting mapping.
+
+## Axion Configuration
+
+The `api url` is hardcoded in the file _MoviesUI/src/api/axios.js_. This should point to the `API` deployed _url_.
+
+```
+  import axios from "axios";
+  
+  const api = axios.create({
+    baseURL: "http://localhost:8080",
+  });
+  
+  export default api;
+```
